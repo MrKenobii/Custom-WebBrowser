@@ -1,7 +1,5 @@
 package com.anilduyguc.webbrowser.fragments;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -20,35 +18,43 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.anilduyguc.webbrowser.MainActivity;
 import com.anilduyguc.webbrowser.R;
-import com.anilduyguc.webbrowser.adapters.WebViewPageAdapter;
-import com.google.android.material.tabs.TabItem;
-import com.google.android.material.tabs.TabLayout;
 
 
 public class WebViewFragment extends Fragment {
     private WebView webView;
     private String url;
-
+    private EditText editText;
+    private Button goButton;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_web_view, container, false);
         webView = view.findViewById(R.id.my_web_view);
-
+        editText = view.findViewById(R.id.edit_text_fragment);
+        goButton = view.findViewById(R.id.button_go_fragment);
         return view;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        Bundle arguments = getArguments();
-        this.url = arguments.getString("url");
-        Log.d("D", "URl in Fragment: " + url);
+        Bundle bundle = getArguments();
+        this.url = bundle.getString("url");
+        Log.d("Url-Fragment", "URl in Fragment: " + url);
         webView.setWebViewClient(new MyWebViewClient());
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webView.loadUrl(url);
+        goButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                WebViewFragment.this.url = editText.getText().toString();
+                webView.setWebViewClient(new MyWebViewClient());
+                WebSettings webSettings = webView.getSettings();
+                webSettings.setJavaScriptEnabled(true);
+                webView.loadUrl(url);
+            }
+        });
     }
 
     private class MyWebViewClient extends WebViewClient {

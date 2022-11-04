@@ -6,53 +6,41 @@
     android:layout_height="match_parent"
     tools:context=".fragments.WebViewFragment">
 
+    <EditText
+        android:id="@+id/edit_text_fragment"
+        android:layout_width="317dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="552dp"
+        android:hint="Enter an url"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_go_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="GO!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/edit_text_fragment"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.003" />
 
     <WebView
         android:id="@+id/my_web_view"
-        android:layout_width="408dp"
-        android:layout_height="546dp"
+        android:layout_width="409dp"
+        android:layout_height="558dp"
         android:usesCleartextTraffic="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_fragment" />
 
-<!--    <EditText-->
-<!--        android:id="@+id/editText2"-->
-<!--        android:layout_width="230dp"-->
-<!--        android:layout_height="51dp"-->
-<!--        android:hint="Enter an url"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.0"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/my_web_view"-->
-<!--        app:layout_constraintVertical_bias="1.0" />-->
 
-<!--    <Button-->
-<!--        android:id="@+id/button_go"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginEnd="32dp"-->
-<!--        android:text="GO!"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.0"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/editText2"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/my_web_view"-->
-<!--        app:layout_constraintVertical_bias="0.928" />-->
-
-<!--    <Button-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:id="@+id/button_new"-->
-<!--        android:text="NEW"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.977"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/editText2"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/my_web_view"-->
-<!--        app:layout_constraintVertical_bias="0.928" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
