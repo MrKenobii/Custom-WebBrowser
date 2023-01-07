@@ -43,6 +43,5 @@ public class WebViewPageAdapter extends FragmentStateAdapter {
         return arrayList.size();
     }
 
-
 }
 

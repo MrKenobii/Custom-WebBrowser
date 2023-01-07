@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.anilduyguc.webbrowser.R;
+import com.google.android.material.tabs.TabLayout;
 
 
 public class WebViewFragment extends Fragment {
